@@ -4,9 +4,9 @@ import { Navbar } from './common/components/Navbar'
 
 export const AnimeApp = () => {
     return (
-      <div className="d-flex">
+      <div className='d-flex'>
         <Navbar />
-        <div className='p-3'>
+        <div className='info-container'>
           <Outlet />
         </div>
       </div>
