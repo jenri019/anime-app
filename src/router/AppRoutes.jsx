@@ -8,6 +8,7 @@ import { MainAnimePage } from "../anime";
 import { MainMangaPage } from "../manga";
 import { MainGenresPage } from "../genres";
 import { MainCharacterPage } from "../characters";
+import { AnimeIdPage } from "../anime/pages/AnimeIdPage";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -20,7 +21,15 @@ export const AppRoutes = createBrowserRouter([
             },
             {
                 path: "anime",
-                element: <MainAnimePage />
+                element: <MainAnimePage />,
+            },
+            {
+                path: "anime/byName",
+                element: <WelcomePage />
+            },
+            {
+                path: "anime/:id",
+                element: <AnimeIdPage />
             },
             {
                 path: "manga",
