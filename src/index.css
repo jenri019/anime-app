@@ -1,4 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .navbar {
   width: 200px;
   height: 100vh;
+}
+
+.info-container {
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.anime-list-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
+   overflow: hidden;
 }
