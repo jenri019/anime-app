@@ -1,10 +1,13 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
-export const SearchBar = ({placeholder}) => {
+export const SearchBar = ({placeholder, type = ''}) => {
+  const navigate = useNavigate();
 
   const onSubmitForm = (event) => {
     event.preventDefault();
     console.log('SUBMIT')
+    navigate(`?${type}=1`);
   }
 
   return (
