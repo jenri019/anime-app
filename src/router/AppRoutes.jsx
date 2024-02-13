@@ -24,10 +24,6 @@ export const AppRoutes = createBrowserRouter([
                 element: <MainAnimePage />,
             },
             {
-                path: "anime/byName",
-                element: <WelcomePage />
-            },
-            {
                 path: "anime/:id",
                 element: <AnimeIdPage />
             },
