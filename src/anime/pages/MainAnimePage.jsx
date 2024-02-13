@@ -8,7 +8,8 @@ export const MainAnimePage = () => {
   const params = useParams();
   const location = useLocation();
 
-  console.log('PARAMS', params, location)
+  console.log('PARAMS', params)
+  console.log('LOCATION', location)
 
   return (
     <>

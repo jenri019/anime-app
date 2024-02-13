@@ -5,7 +5,7 @@ export const AnimeHeader = () => {
   return (
     <>
         <h1>LISTA DE ANIMES</h1>
-        <SearchBar placeholder="Buscar anime" type="type" />
+        <SearchBar placeholder="Buscar anime por letra" type="type" />
     </>
   )
 }
