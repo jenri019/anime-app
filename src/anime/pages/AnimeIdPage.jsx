@@ -1,6 +1,7 @@
 import React from 'react'
 import { useFetchData } from '../hooks';
 import { useNavigate } from 'react-router-dom';
+import { AnimeHeader } from '../components';
 
 export const AnimeIdPage = ({id}) => {
 
@@ -12,6 +13,7 @@ export const AnimeIdPage = ({id}) => {
 
   return (
     <>
+      <AnimeHeader />
       <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
     </>
   )
