@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 
-export const SearchBar = ({placeholder, type = ''}) => {
+export const SearchBar = ({placeholder}) => {
   const navigate = useNavigate();
 
   const {formState, onInputChange} = useForm({
@@ -14,7 +14,7 @@ export const SearchBar = ({placeholder, type = ''}) => {
   const onSubmitForm = (event) => {
     event.preventDefault();
     if(toSearch.trim().length == 0) return;
-    navigate(`?${type}=${toSearch}`);
+    navigate(`/anime/search`);
   }
 
   return (
