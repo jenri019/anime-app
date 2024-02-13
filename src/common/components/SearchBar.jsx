@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
+import { CommonContext } from '../context/CommonContext';
 
 export const SearchBar = ({placeholder}) => {
   const navigate = useNavigate();
+
+  const { destinyRoute } = useContext(CommonContext)
 
   const {formState, onInputChange} = useForm({
     toSearch: '',
@@ -14,7 +17,7 @@ export const SearchBar = ({placeholder}) => {
   const onSubmitForm = (event) => {
     event.preventDefault();
     if(toSearch.trim().length == 0) return;
-    navigate(`/anime/search`);
+    navigate(`${destinyRoute}?querySearch=${toSearch}`);
   }
 
   return (

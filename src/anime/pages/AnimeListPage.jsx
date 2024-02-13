@@ -7,11 +7,7 @@ import { AnimeHeader } from '../components';
 export const AnimeListPage = () => {
 
   const location = useLocation();
-  const params = useParams();
-  const { anime = '' } = queryString.parse(location.search);
-
-  console.log(JSON.stringify(params))
-  console.log(JSON.stringify(location))
+  const { querySearch = '' } = queryString.parse(location.search);
   
   const navigate = useNavigate();
 
@@ -19,9 +15,7 @@ export const AnimeListPage = () => {
     navigate(`id`);
   }
 
-  //const {animes, isLoading} = useFetchData();
-
-  //console.log('HECHO', animes)
+  const {animes, isLoading} = useFetchData();
 
   return (
     <div>
