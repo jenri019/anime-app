@@ -13,6 +13,7 @@ export const SearchBar = ({placeholder, type = ''}) => {
 
   const onSubmitForm = (event) => {
     event.preventDefault();
+    if(toSearch.trim().length == 0) return;
     navigate(`?${type}=${toSearch}`);
   }
 
