@@ -12,7 +12,7 @@ export const AnimeList = () => {
 
   return (
     <>
-        <div className='anime-list-grid animate__animated animate__fadeInRight'>
+        <div className='anime-list-grid animate__animated animate__fadeInRight mt-2'>
         {
           (isLoading)
           ? (<h1>Cargando</h1> )
