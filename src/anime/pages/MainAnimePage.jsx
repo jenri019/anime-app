@@ -1,11 +1,10 @@
 import React from 'react'
-import { AnimeHeader } from '../components'
+import { AnimeListContainer } from '../components'
 
 export const MainAnimePage = () => {
-
   return (
     <>
-      <AnimeHeader />
+      <AnimeListContainer />
     </>
   )
 }

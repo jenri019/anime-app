@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 import { AnimeApp } from "../AnimeApp";
 import { WelcomePage } from "../main/pages/WelcomePage";
-import { AnimeListPage, MainAnimePage } from "../anime";
+import { MainAnimePage } from "../anime";
 import { MainMangaPage } from "../manga";
 import { MainGenresPage } from "../genres";
 import { MainCharacterPage } from "../characters";
@@ -24,11 +24,7 @@ export const AppRoutes = createBrowserRouter([
                 element: <MainAnimePage />,
             },
             {
-                path: "anime/:querySearch",
-                element: <AnimeListPage />
-            },
-            {
-                path: "anime/:querySearch/:id",
+                path: "anime/:id",
                 element: <AnimeIdPage />
             },
             {
