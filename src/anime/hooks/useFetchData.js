@@ -8,16 +8,14 @@ export const useFetchData = (searchParam, type) => {
 
     const getAnimeList = async () => {
         setisLoading(true);
-        console.log('Cargando')
         const newAnimes = await getAnimeData(searchParam, type);
         setAnimes(newAnimes);
-        console.log('HECHO')
         setisLoading(false);
     }
 
     useEffect(() => {
         getAnimeList();
-    }, [])
+    }, [searchParam, type])
 
     return {
         animes: animes,
