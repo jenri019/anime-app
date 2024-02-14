@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
 import queryString from 'query-string';
 
-export const SearchBar = ({placeholder}) => {
+export const SearchBar = ({placeholder, limit = 30}) => {
 
   const location = useLocation();
   const { querySearch = '' } = queryString.parse(location.search);
@@ -17,7 +17,7 @@ export const SearchBar = ({placeholder}) => {
   const navigate = useNavigate();
 
   const onSearchInputChange = (event) => {
-    if(event.target.value.trim().length >  1) return;
+    if(event.target.value.trim().length >  limit) return;
     onInputChange(event)
   }
 

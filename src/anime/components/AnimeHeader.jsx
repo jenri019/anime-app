@@ -13,7 +13,7 @@ export const AnimeHeader = ({}) => {
 
   return (
     <>
-        <SearchBar placeholder="Buscar anime por letra" />
+        <SearchBar placeholder="Buscar anime por letra" limit={1}/>
     </>
   )
 }
