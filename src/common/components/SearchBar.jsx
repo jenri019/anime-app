@@ -21,6 +21,11 @@ export const SearchBar = ({placeholder}) => {
     navigate(`${destinyRoute}?querySearch=${toSearch}`);
   }
 
+  const onSearchInputChange = (event) => {
+    if(event.target.value.trim().length >  1) return;
+    onInputChange(event)
+  }
+
   return (
     <>
       <form className='d-flex' onSubmit={(event) => onSubmitForm(event)}>
@@ -31,7 +36,7 @@ export const SearchBar = ({placeholder}) => {
               placeholder={placeholder}
               name='toSearch'
               value={toSearch}
-              onChange={(event) => { onInputChange(event) }}
+              onChange={(event) => { onSearchInputChange(event) }}
               autoComplete='off'/>
               
           <button className="btn btn-primary">
