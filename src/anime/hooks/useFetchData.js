@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { getAnimeData } from '../helpers';
 
-export const useFetchData = (name, type) => {
+export const useFetchData = (searchParam, type) => {
     
     const [animes, setAnimes] = useState([])
     const [isLoading, setisLoading] = useState(true)
 
-    const getAnimes = async () => {
-        const newAnimes = await getAnimeData(name, type);
+    const getAnimeList = async () => {
+        setisLoading(true);
+        console.log('Cargando')
+        const newAnimes = await getAnimeData(searchParam, type);
         setAnimes(newAnimes);
+        console.log('HECHO')
         setisLoading(false);
     }
 
     useEffect(() => {
-        getAnimes();
+        getAnimeList();
     }, [])
 
     return {
