@@ -13,7 +13,6 @@ export const AnimeIdPage = ({id}) => {
 
   return (
     <>
-      <AnimeHeader />
       <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
     </>
   )
