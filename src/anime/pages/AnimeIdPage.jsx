@@ -27,6 +27,14 @@ export const AnimeIdPage = () => {
           </ul>
           <h5 className='mt-3'>Sinopsis</h5>
           <p>{animes?.synopsis}</p>
+          <hr />
+          <div className='d-flex flex-row mb-2'>
+            {
+              animes?.genres?.map( genre => (
+                <span className='badge badge-primary info-badge' key={genre?.mal_id}>{genre?.name}</span>
+              ))
+            }
+          </div>
           <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
         </div>
       </div>

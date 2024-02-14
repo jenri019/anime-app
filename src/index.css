@@ -28,3 +28,8 @@ p {
   -webkit-line-clamp: 3;  /* Number of lines displayed before it truncate */
    overflow: hidden;
 }
+
+.info-badge {
+  background-color: #0772d6ff;
+  margin-right: 10px;
+}
