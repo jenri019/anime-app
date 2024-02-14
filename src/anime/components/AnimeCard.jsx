@@ -1,6 +1,5 @@
-import React, { useContext } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { CommonContext } from '../../common/context/CommonContext';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 export const AnimeCard = ({
   images,
@@ -8,7 +7,6 @@ export const AnimeCard = ({
   titles,
   mal_id
 }) => {
-    const { destinyRoute } = useContext(CommonContext);
 
     return (
         <div className='col animate__animated animate__fadeInRight'>
@@ -24,7 +22,7 @@ export const AnimeCard = ({
                                 <small className='text-muted'>{synopsis}</small>
                             </p>
                         </div>
-                        <Link to={`${destinyRoute}/${mal_id}`}>Ver más...</Link>
+                        <Link to={`${mal_id}`}>Ver más...</Link>
                     </div>
                 </div>
             </div>

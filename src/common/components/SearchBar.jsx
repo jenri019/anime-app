@@ -1,35 +1,36 @@
-import React, { useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from '../hooks/useForm';
-import { CommonContext } from '../context/CommonContext';
+import queryString from 'query-string';
 
 export const SearchBar = ({placeholder}) => {
-  const navigate = useNavigate();
 
-  const { destinyRoute, searchTerm, setSearchTerm } = useContext(CommonContext)
+  const location = useLocation();
+  const { querySearch = '' } = queryString.parse(location.search);
 
   const {formState, onInputChange} = useForm({
-    toSearch: searchTerm,
+    toSearch: querySearch,
   })
 
   const {toSearch} = formState;
 
-  const onSubmitForm = (event) => {
-    event.preventDefault();
-    if(toSearch.trim().length == 0) return;
-    setSearchTerm(toSearch);
-    navigate(`${destinyRoute}?querySearch=${toSearch}`);
-  }
+  const navigate = useNavigate();
 
   const onSearchInputChange = (event) => {
     if(event.target.value.trim().length >  1) return;
     onInputChange(event)
   }
 
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    if(toSearch.trim().length == 0) return;
+    navigate(`?querySearch=${toSearch}`);
+  }
+
   return (
     <>
       <form className='d-flex' onSubmit={(event) => onSubmitForm(event)}>
-
+        <div className="col-md-4">
           <input
               type="text"
               className='form-control'
@@ -38,10 +39,12 @@ export const SearchBar = ({placeholder}) => {
               value={toSearch}
               onChange={(event) => { onSearchInputChange(event) }}
               autoComplete='off'/>
-              
-          <button className="btn btn-primary">
-            Buscar
-          </button>
+        </div>
+        <div className="col-md-2">
+              <button className="btn btn-primary">
+                Buscar
+              </button>
+        </div>
       </form>
     </>
   )
