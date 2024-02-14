@@ -8,8 +8,11 @@ export const useFetchData = (searchParam, type) => {
 
     const getAnimeList = async () => {
         setisLoading(true);
-        const newAnimes = await getAnimeData(searchParam, type);
-        setAnimes(newAnimes);
+        setAnimes([]);
+        if(searchParam !== '') {
+            const newAnimes = await getAnimeData(searchParam, type);
+            setAnimes(newAnimes);
+        }
         setisLoading(false);
     }
 
