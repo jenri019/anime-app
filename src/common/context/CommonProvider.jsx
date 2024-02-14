@@ -4,7 +4,8 @@ import { commonReducer } from './commonReducer'
 import { CommonContext } from './CommonContext'
 
 const initialState = {
-    destinyRoute: ""
+    destinyRoute: "",
+    searchTerm: ""
 }
 
 export const CommonProvider = ({children}) => {
@@ -19,10 +20,19 @@ export const CommonProvider = ({children}) => {
         dispatch(action);
     }
 
+    const setSearchTerm = ( searchTerm = '' ) => {
+        const action = {
+            type: types.setSearchTerm,
+            payload: searchTerm
+        }
+        dispatch(action);
+    }
+
     return (
 
         <CommonContext.Provider value={{
             setRoute,
+            setSearchTerm,
             ...commonState
         }}
         >

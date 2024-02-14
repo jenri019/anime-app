@@ -6,10 +6,10 @@ import { CommonContext } from '../context/CommonContext';
 export const SearchBar = ({placeholder}) => {
   const navigate = useNavigate();
 
-  const { destinyRoute } = useContext(CommonContext)
+  const { destinyRoute, searchTerm, setSearchTerm } = useContext(CommonContext)
 
   const {formState, onInputChange} = useForm({
-    toSearch: '',
+    toSearch: searchTerm,
   })
 
   const {toSearch} = formState;
@@ -17,6 +17,7 @@ export const SearchBar = ({placeholder}) => {
   const onSubmitForm = (event) => {
     event.preventDefault();
     if(toSearch.trim().length == 0) return;
+    setSearchTerm(toSearch);
     navigate(`${destinyRoute}?querySearch=${toSearch}`);
   }
 

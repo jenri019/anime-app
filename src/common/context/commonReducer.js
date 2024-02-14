@@ -8,6 +8,11 @@ export const commonReducer = (state = {}, action) => {
                 ...state,
                 destinyRoute: action.payload
             };
+        case types.setSearchTerm:
+            return {
+                ...state,
+                searchTerm: action.payload
+            };
 
         default:
             return state;
