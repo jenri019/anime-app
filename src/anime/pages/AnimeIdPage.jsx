@@ -1,7 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useFetchData } from '../hooks';
 
-export const AnimeIdPage = ({id}) => {
+export const AnimeIdPage = () => {
+  const { pathname } = useLocation();
+  const {animes, isLoading} = useFetchData(pathname.substring(pathname.lastIndexOf('/') + 1), 'ID');
 
   const navigate = useNavigate();
 
@@ -11,7 +14,22 @@ export const AnimeIdPage = ({id}) => {
 
   return (
     <>
-      <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
+      <div className='row mt-5 animate__animated animate__fadeInRight'>
+        <div className="col-2">
+          <img src={animes?.images?.jpg?.large_image_url} alt="animes?.title" className='img-thumbnail'/>
+        </div>
+        <div className="col-6">
+          <h3>{animes?.title} <small>({animes?.title_japanese})</small></h3>
+          <ul className='list-group list-group-flush'>
+            <li className='list-group-item'><b>Episodios:</b> {animes?.episodes}</li>
+            <li className='list-group-item'><b>Estado</b> {animes?.status}</li>
+            <li className='list-group-item'><b>Año</b> {animes?.year || '????'}</li>
+          </ul>
+          <h5 className='mt-3'>Sinopsis</h5>
+          <p>{animes?.synopsis}</p>
+          <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
+        </div>
+      </div>
     </>
   )
 }
