@@ -4,11 +4,10 @@ import {
 } from "react-router-dom";
 import { AnimeApp } from "../AnimeApp";
 import { WelcomePage } from "../main/pages/WelcomePage";
-import { MainAnimePage } from "../anime";
+import { AnimeIdPage, MainAnimePage } from "../anime";
 import { MainMangaPage } from "../manga";
 import { MainGenresPage } from "../genres";
-import { MainCharacterPage } from "../characters";
-import { AnimeIdPage } from "../anime/pages/AnimeIdPage";
+import { CharacterIdPage, MainCharacterPage } from "../characters";
 
 export const AppRoutes = createBrowserRouter([
     {
@@ -28,16 +27,20 @@ export const AppRoutes = createBrowserRouter([
                 element: <AnimeIdPage />
             },
             {
+                path: "character",
+                element: <MainCharacterPage />
+            },
+            {
+                path: "character/:id",
+                element: <CharacterIdPage />
+            },
+            {
                 path: "manga",
                 element: <MainMangaPage />
             },
             {
                 path: "genres",
                 element: <MainGenresPage />
-            },
-            {
-                path: "characters",
-                element: <MainCharacterPage />
             },
             {
                 path: "*",
