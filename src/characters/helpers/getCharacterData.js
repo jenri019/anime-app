@@ -1,4 +1,4 @@
-export const getAnimeData = async(searchParam = '', type = '') => {
+export const getCharacterData = async(searchParam = '', type = '') => {
     let url = ``
 
     const resp = await fetch(url)
