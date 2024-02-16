@@ -23,7 +23,7 @@ export const Navbar = () => {
 
             <NavLink 
                 className={({isActive}) => { return `nav-link ${isActive ? 'active': ''}` }}
-                to="/characters"
+                to="/character"
             >
                 Personajes
             </NavLink>
