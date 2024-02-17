@@ -1,7 +1,10 @@
 import React from 'react'
+import { CharacterListContainer } from '../components'
 
 export const MainCharacterPage = () => {
   return (
-    <div>MainCharacterPage</div>
+    <>
+      <CharacterListContainer />
+    </>
   )
 }
