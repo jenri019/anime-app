@@ -16,10 +16,17 @@
   overflow-x: hidden;
 }
 
-.anime-list-grid {
+.anime-list-grid,
+.character-list-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+}
+
+.anime-list-grid {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.character-list-grid {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 p {
