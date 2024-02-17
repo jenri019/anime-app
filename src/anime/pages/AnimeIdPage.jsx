@@ -21,11 +21,11 @@ export const AnimeIdPage = () => {
         <div className="col-6">
           <h3>{animes?.title} <small>({animes?.title_japanese})</small></h3>
           <ul className='list-group list-group-flush'>
-            <li className='list-group-item'><b>Episodios:</b> {animes?.episodes}</li>
-            <li className='list-group-item'><b>Estado</b> {animes?.status}</li>
-            <li className='list-group-item'><b>Año</b> {animes?.year || '????'}</li>
+            <li className='list-group-item'><b>No. Episodes: </b> {animes?.episodes}</li>
+            <li className='list-group-item'><b>Status: </b> {animes?.status}</li>
+            <li className='list-group-item'><b>Year</b> {animes?.year || '????'}</li>
           </ul>
-          <h5 className='mt-3'>Sinopsis</h5>
+          <h5 className='mt-3'>Synopsis</h5>
           <p>{animes?.synopsis}</p>
           <hr />
           <div className='d-flex flex-row mb-2'>
