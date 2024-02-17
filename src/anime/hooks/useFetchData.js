@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getAnimeData } from '../helpers';
 
-export const useFetchData = (searchParam, type) => {
+export const useFetchData = (searchParam) => {
     
     const [animes, setAnimes] = useState([])
     const [isLoading, setisLoading] = useState(true)
@@ -10,7 +10,7 @@ export const useFetchData = (searchParam, type) => {
         setisLoading(true);
         setAnimes([]);
         if(searchParam !== '') {
-            const newAnimes = await getAnimeData(searchParam, type);
+            const newAnimes = await getAnimeData(searchParam);
             setAnimes(newAnimes);
         }
         setisLoading(false);
@@ -18,7 +18,7 @@ export const useFetchData = (searchParam, type) => {
 
     useEffect(() => {
         getAnimeList();
-    }, [searchParam, type])
+    }, [searchParam])
 
     return {
         animes: animes,

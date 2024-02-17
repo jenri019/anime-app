@@ -1,14 +1,9 @@
-export const getCharacterData = async(searchParam = '', type = '') => {
-    let url = ``
+export const getCharacterData = async(searchParam = '') => {
+    if(searchParam === '?q=') {
+        return []
+    };
 
-    switch(type) {
-        case 'ID':
-            url = `https://api.jikan.moe/v4/characters/${searchParam}/full`
-            break;
-        default:
-            url = `https://api.jikan.moe/v4/characters?q=${searchParam}&limit=10`;
-            break;
-    }
+    let url = `https://api.jikan.moe/v4/characters${searchParam}`
 
     const resp = await fetch(url)
     const { data:characters } = await resp.json();
