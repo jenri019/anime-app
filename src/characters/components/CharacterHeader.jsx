@@ -1,7 +1,11 @@
 import React from 'react'
+import { SearchBar } from '../../common';
 
 export const CharacterHeader = () => {
+
   return (
-    <div>CharacterHeader</div>
+    <>
+        <SearchBar placeholder="Buscar personaje" limit={30}/>
+    </>
   )
 }
