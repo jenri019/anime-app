@@ -4,7 +4,7 @@ import { useFetchData } from '../hooks';
 
 export const CharacterIdPage = () => {
   const { pathname } = useLocation();
-  const {characters, isLoading} = useFetchData(pathname.substring(pathname.lastIndexOf('/') + 1), 'ID');
+  const {characters, isLoading} = useFetchData(`/${pathname.substring(pathname.lastIndexOf('/') + 1)}`);
 
   const navigate = useNavigate();
 

@@ -8,7 +8,7 @@ export const AnimeList = () => {
   
   const location = useLocation();
   const { querySearch = '' } = queryString.parse(location.search);
-  const {animes, isLoading} = useFetchData(querySearch, 'FULL');
+  const {animes, isLoading} = useFetchData(`?q=${querySearch}`);
 
   return (
     <>

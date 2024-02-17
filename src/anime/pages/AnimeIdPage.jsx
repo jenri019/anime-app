@@ -4,7 +4,7 @@ import { useFetchData } from '../hooks';
 
 export const AnimeIdPage = () => {
   const { pathname } = useLocation();
-  const {animes, isLoading} = useFetchData(pathname.substring(pathname.lastIndexOf('/') + 1), 'ID');
+  const {animes, isLoading} = useFetchData(`/${pathname.substring(pathname.lastIndexOf('/') + 1)}`);
 
   const navigate = useNavigate();
 

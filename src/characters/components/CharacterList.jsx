@@ -8,7 +8,7 @@ export const CharacterList = () => {
   
   const location = useLocation();
   const { querySearch = '' } = queryString.parse(location.search);
-  const {characters = [], isLoading} = useFetchData (querySearch, 'FULL');
+  const {characters = [], isLoading} = useFetchData (`?q=${querySearch}`);
 
   return (
     <>
