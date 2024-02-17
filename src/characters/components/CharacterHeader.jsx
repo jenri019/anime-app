@@ -5,7 +5,7 @@ export const CharacterHeader = () => {
 
   return (
     <>
-        <SearchBar placeholder="Buscar personaje" limit={30}/>
+        <SearchBar placeholder="Buscar personaje"/>
     </>
   )
 }
