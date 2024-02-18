@@ -1,11 +1,12 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useFetchData } from '../hooks';
-import { IsLoading } from '../../common/components/IsLoading';
+import { IsLoading,RequestStatus } from '../../common';
 
 export const CharacterIdPage = () => {
   const { pathname } = useLocation();
-  const {characters = [], isLoading} = useFetchData(`/${pathname.substring(pathname.lastIndexOf('/') + 1)}/full`);
+  const  querySearch = `${pathname.substring(pathname.lastIndexOf('/') + 1)}`;
+  const {characters, status, isLoading} = useFetchData(`/${querySearch}/full`);
 
   const navigate = useNavigate();
 
@@ -13,9 +14,21 @@ export const CharacterIdPage = () => {
     navigate(-1);
   }
 
-  const PageInformation = () => {
+  const PageStatus = () => {
     return(
       <>
+      {
+        (characters !== undefined)
+        ? <PageInformation />
+        : <RequestStatus size={1} status={status} query={querySearch}/>
+      }
+      </>
+    )
+  }
+
+  const PageInformation = () => {
+    return(
+      <div className='row mt-5 animate__animated animate__fadeInRight'>
         <div className="col-2">
           <img src={characters?.images?.jpg?.image_url} alt={characters?.name} className='img-thumbnail'/>
         </div>
@@ -27,32 +40,30 @@ export const CharacterIdPage = () => {
           <h5 className='mt-3'>Anime</h5>
           {
             characters?.anime?.map(anime => (
-              <span className='badge badge-primary info-badge' key={anime?.anime?.mal_id}>{anime?.anime?.title}</span>
+              <Link to={`/anime/${anime?.anime?.mal_id}`}  className='badge badge-primary info-badge' key={anime?.anime?.mal_id}>{anime?.anime?.title}</Link>
             ))
           }
           <hr />
           <h5 className='mt-3'>Manga</h5>
           {
             characters?.manga?.map(manga => (
-              <span className='badge badge-primary info-badge' key={manga?.manga?.mal_id}>{manga?.manga?.title}</span>
+              <Link to={``} className='badge badge-primary info-badge' key={manga?.manga?.mal_id}>{manga?.manga?.title}</Link>
             ))
           }
           <hr />
           <button className='btn btn-primary' onClick={() => onBackPage()}>Volver</button>
         </div>
-      </>
+      </div>
     )
   }
 
   return (
     <>
-      <div className='row mt-5 animate__animated animate__fadeInRight'>
         {
           (isLoading)
           ? <IsLoading />
-          : <PageInformation />
+          : <PageStatus />
         }
-      </div>
     </>
   )
 }
