@@ -8,5 +8,8 @@ export const getCharacterData = async(searchParam = '') => {
     const resp = await fetch(url)
     const { data:characters } = await resp.json();
 
-    return characters;
+    return {
+        characters,
+        status: resp.status
+    };
 }

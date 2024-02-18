@@ -8,5 +8,8 @@ export const getAnimeData = async(searchParam = '') => {
     const resp = await fetch(url)
     const { data:animes } = await resp.json();
 
-    return animes;
+    return {
+        animes,
+        status: resp.status
+    };
 }

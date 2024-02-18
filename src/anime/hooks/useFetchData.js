@@ -4,14 +4,16 @@ import { getAnimeData } from '../helpers';
 export const useFetchData = (searchParam) => {
     
     const [animes, setAnimes] = useState([])
+    const [status, setStatus] = useState(200)
     const [isLoading, setisLoading] = useState(true)
 
     const getAnimeList = async () => {
         setisLoading(true);
         setAnimes([]);
         if(searchParam !== '') {
-            const newAnimes = await getAnimeData(searchParam);
-            setAnimes(newAnimes);
+            const {animes, status} = await getAnimeData(searchParam);
+            setAnimes(animes);
+            setStatus(status)
         }
         setisLoading(false);
     }
@@ -22,6 +24,7 @@ export const useFetchData = (searchParam) => {
 
     return {
         animes: animes,
+        status: status,
         isLoading: isLoading
     }
 }
