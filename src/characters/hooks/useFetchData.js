@@ -7,7 +7,7 @@ export const useFetchData = (searchParam) => {
     const [status, setStatus] = useState(200);
     const [isLoading, setisLoading] = useState(true)
 
-    const getAnimeList = async () => {
+    const getCharacterList = async () => {
         setisLoading(true);
         setCharacters([]);
         if(searchParam !== '') {
@@ -19,7 +19,7 @@ export const useFetchData = (searchParam) => {
     }
 
     useEffect(() => {
-        getAnimeList();
+        getCharacterList();
     }, [searchParam])
 
     return {
