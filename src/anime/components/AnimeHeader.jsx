@@ -1,11 +1,11 @@
 import React from 'react'
 import { SearchBar } from '../../common'
 
-export const AnimeHeader = ({}) => {
+export const AnimeHeader = () => {
 
   return (
     <>
-        <SearchBar placeholder="Buscar anime por letra"/>
+      <SearchBar placeholder="Buscar anime por letra" />
     </>
   )
 }
