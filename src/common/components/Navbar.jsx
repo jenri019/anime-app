@@ -28,14 +28,14 @@ export const Navbar = () => {
                 Personajes
             </NavLink>
 
-            {/*
+            {
             <NavLink 
                 className={({isActive}) => { return `nav-link ${isActive ? 'active': ''}` }}
                 to="/genres"
             >
                 Generos
             </NavLink>
-            */}
+            }
 
             <NavLink 
                 className={({isActive}) => { return `nav-link ${isActive ? 'active': ''}` }}

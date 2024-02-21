@@ -42,10 +42,14 @@ export const AppRoutes = createBrowserRouter([
                 path: "manga/:id",
                 element: <MangaIdPage />
             },
-            {/*
+            {
                 path: "genres",
                 element: <MainGenresPage />
-        */},
+            },
+            {
+                path: "genres/:type",
+                element: <MainGenresPage />
+            },
             {
                 path: "*",
                 element: <Navigate to="/" />
