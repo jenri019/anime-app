@@ -26,6 +26,7 @@ export const genresReducer = (state = {}, action) => {
                     newArray = state.filter.filter(el => el !== action.payload);
                 }
             }
+            localStorage.setItem('filter', JSON.stringify(newArray.toString()));
 
             return {
                 ...state,
