@@ -36,18 +36,49 @@ p.card-text {
    overflow: hidden;
 }
 
-.info-badge {
-  background-color: #0772d6ff;
+.badge {
   margin-right: 10px;
   margin-top: 10px;
   cursor: pointer;
   text-decoration: none;
 }
 
+.info-badge {
+  background-color: #0772d6ff;
+}
+
 .info-badge:hover {
   -webkit-box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
   -moz-box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
   box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
+}
+
+.genres-badge {
+  background-color: rgb(238, 241, 243);
+  border: thin solid #0772d6ff;
+  color: #0772d6ff;
+}
+
+.genres-badge:hover {
+  -webkit-box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
+  -moz-box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
+  box-shadow: 0px 0px 6px 1px rgba(30,56,230,1);
+}
+
+.active-badge {
+  background-color: #0772d6ff;
+  border: none;
+  color: rgb(238, 241, 243);
+}
+
+.genres-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.genres-input > div{
+  margin-right: 10px;
 }
 
 .loading-component {
