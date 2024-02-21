@@ -2,7 +2,7 @@ import React from 'react'
 
 const getRequestStatus = (size, status, query) => {
 
-    if(size === 0 && status === 200) return `NO RESULTS FOUND FOR ${query}`;
+    if(size === 0 && status === 200) return `NO RESULTS FOUND`;
 
     switch(status) {
         case 304:
