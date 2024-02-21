@@ -8,6 +8,41 @@
   height: 100vh;
 }
 
+.anime-card-img {
+  position: relative;
+}
+
+.anime-card-title {
+  background-color: rgba(8, 17, 78, 0.9);
+  color: #FFFFFF;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: none;
+  flex-direction: column;
+}
+.anime-card-title .title{
+  font-size: 1.6rem;
+  text-decoration: none;
+}
+
+.anime-card-title .card-text{
+  color: #FFFFFF!important
+}
+
+.anime-card-img:hover .anime-card-title {
+  display: flex;
+}
+
+.anime-card img{
+  width: -webkit-fill-available;
+}
+
 .info-container {
   padding: 10px;
   width: 100vw;
@@ -23,7 +58,7 @@
 }
 
 .anime-list-grid {
-  grid-template-columns:  repeat(4, 1fr);
+  grid-template-columns:  repeat(5, 1fr);
 }
 .character-list-grid {
   grid-template-columns: repeat(8, 1fr);
