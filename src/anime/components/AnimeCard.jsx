@@ -5,24 +5,22 @@ export const AnimeCard = ({
   images,
   synopsis,
   titles,
-  mal_id
+  mal_id,
+  route = ''
 }) => {
 
     return (
         <div className='col animate__animated animate__fadeInRight'>
             <div className="card">
-                <div className="row no-gutters">
-                    <div className="col-4">
-                        <img src={images.jpg.image_url } className="card-img" alt={titles[0].title} />
-                    </div>
-                    <div className="col-8">
-                        <div className="card-body">
-                            <h5 className="card-title">{titles[0].title}</h5>
-                            <p className="card-text">
-                                <small className='text-muted'>{synopsis}</small>
+                <div className="anime-card">
+                    <div className="anime-card-img">
+                        <img src={images.jpg.image_url } alt={titles[0].title} />
+                        <div className='anime-card-title'>
+                            <Link to={`${route}${mal_id}`} className="card-title title animate__animated animate__fadeInUp">{titles[0].title}</Link>
+                            <p className="card-text animate__animated animate__fadeInUp">
+                                <small>{synopsis}</small>
                             </p>
                         </div>
-                        <Link to={`${mal_id}`}>Ver más...</Link>
                     </div>
                 </div>
             </div>
