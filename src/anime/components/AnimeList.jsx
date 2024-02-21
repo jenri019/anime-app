@@ -7,32 +7,30 @@ import { IsLoading } from '../../common';
 import { RequestStatus } from '../../common/components/RequestStatus';
 
 export const AnimeList = () => {
-  
+
   const location = useLocation();
   const { querySearch = '' } = queryString.parse(location.search);
-  const {animes = [], status, isLoading} = useFetchData(`?q=${querySearch}`);
+  const { animes = [], status, isLoading } = useFetchData(`?q=${querySearch}`);
 
   const PageStatus = () => {
-    return(
+    return (
       <>
-      {
-        (animes.length === 0 && status === 200 && querySearch !== '')
-        ? <RequestStatus size={animes.length} status={status} query={querySearch}/>
-        : <PageInformation />
-      }
+        {
+          (animes.length === 0 && status === 200 && querySearch !== '')
+            ? <RequestStatus size={animes.length} status={status} query={querySearch} />
+            : <PageInformation />
+        }
       </>
     )
   }
 
   const PageInformation = () => {
-    return(
+    return (
       <div className='anime-list-grid animate__animated animate__fadeInRight mt-2'>
-         {
-           (
-            animes.map( anime => (
-              <AnimeCard key={anime.mal_id} {...anime} />
-            ))
-          )
+        {
+          animes.map(anime => (
+            <AnimeCard key={anime.mal_id} {...anime} />
+          ))
         }
       </div>
     )
@@ -42,8 +40,8 @@ export const AnimeList = () => {
     <>
       {
         (isLoading)
-        ? <IsLoading />
-        : <PageStatus />
+          ? <IsLoading />
+          : <PageStatus />
       }
     </>
   )

@@ -6,7 +6,7 @@ export const GenresOptions = ({selectedListOption = '', selectedTypeOption = ''}
 
   const {filter, changeFilter} = useContext(GenresContext);
 
-  const {genres = [], status, isLoading} = useFetchGenresData(selectedTypeOption, selectedListOption);
+  const {genres = []} = useFetchGenresData(selectedTypeOption, selectedListOption);
 
   const addActiveClass = (id) => {
     return (filter.includes(id)) ? 'active-badge' : '';
