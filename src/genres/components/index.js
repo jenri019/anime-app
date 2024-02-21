@@ -1,4 +1,3 @@
-export * from './GenresForm'
 export * from './GenresFormInput'
 export * from './GenresFormSelect'
 export * from './GenresGridContainer'
