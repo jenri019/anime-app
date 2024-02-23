@@ -22,7 +22,7 @@ export const useFetchListData = (type, filter) => {
 
     useEffect(() => {
         getByGenreList();
-    }, [filter, type])
+    }, [filter])
 
     return {
         list: list,
