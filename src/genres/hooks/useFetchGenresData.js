@@ -4,19 +4,18 @@ import { getGenresData } from '../helpers'
 export const useFetchGenresData = (searchType, searchList) => {
     
     const [genres, setGenres] = useState([])
-    const [status, setStatus] = useState(200);
-    const [isLoading, setisLoading] = useState(true)
+    //const [status, setStatus] = useState(200);
+    //const [isLoading, setisLoading] = useState(true)
 
     const getGenresList = async () => {
-        setisLoading(true);
-        setGenres([]);
+        //setisLoading(true);
         const searchParam = `/${searchType}?filter=${searchList}`
         if(searchList !== '') {
             const {genres, status} = await getGenresData(searchParam);
             setGenres(genres);
-            setStatus(status)
+            //setStatus(status)
         }
-        setisLoading(false);
+        //setisLoading(false);
     }
 
     useEffect(() => {
@@ -25,7 +24,7 @@ export const useFetchGenresData = (searchType, searchList) => {
 
     return {
         genres: genres,
-        status: status,
-        isLoading: isLoading
+        //status: status,
+        //isLoading: isLoading
     }
 }
