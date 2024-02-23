@@ -10,8 +10,8 @@ const initialState = {
 }
 
 const init = () => {
-    const type = JSON.parse(localStorage.getItem('type'));
-    const genre = JSON.parse(localStorage.getItem('genre'));
+    const type = JSON.parse(localStorage.getItem('type')) || 'anime';
+    const genre = JSON.parse(localStorage.getItem('genre')) || 'genres';
     let filter = JSON.parse(localStorage.getItem('filter')) || '';
 
     let array = [];
